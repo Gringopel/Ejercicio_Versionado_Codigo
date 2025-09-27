@@ -1,0 +1,19 @@
+name: Demo Workflow Manual
+on:
+    workflow_dispatch:
+        inputs:
+            nombre:
+                description: 'Nombre'
+                required: true
+                default: 'Nombre'
+            apellidos:
+                description: 'Apellidos'
+                required: true
+                default: 'Apellidos'
+
+jobs:
+    saludo:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Ejercicio Saludo
+              run: echo '${{github.event.inputs.nombre}} ${{github.event.inputs.apellidos}}'
